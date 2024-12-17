@@ -1,19 +1,24 @@
+import { FileUser, House, Trophy, User2 } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "./ui/card";
 
 const features = [
 	{
+		icon: <User2 className="w-6 h-6 text-red-700" />,
 		title: "Expert Coaches",
 		description: "Learn from experienced professionals with international coaching licenses.",
 	},
 	{
+		icon: <House className="w-6 h-6 text-red-700" />,
 		title: "State-of-the-art Facilities",
 		description: "Train in our modern facilities with the latest equipment and technology.",
 	},
 	{
+		icon: <FileUser className="w-6 h-6 text-red-700" />,
 		title: "Personalized Training",
 		description: "Receive tailored training programs to suit your individual needs and goals.",
 	},
 	{
+		icon: <Trophy className="w-6 h-6 text-red-700" />,
 		title: "Competitive Matches",
 		description: "Participate in regular matches and tournaments to apply your skills.",
 	},
@@ -28,6 +33,7 @@ const Features = () => {
 					{features.map((feature, index) => (
 						<Card key={index}>
 							<CardHeader>
+								<span className="mb-2">{feature.icon}</span>
 								<CardTitle>{feature.title}</CardTitle>
 								<CardDescription>{feature.description}</CardDescription>
 							</CardHeader>

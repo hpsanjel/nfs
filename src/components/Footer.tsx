@@ -1,6 +1,6 @@
 const Footer = () => {
 	return (
-		<footer className="bg-gray-800 text-white py-8">
+		<footer className="bg-red-900 text-white py-8">
 			<div className="container mx-auto px-4">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:mx-6">
 					<div className="space-y-2 max-w-sm">
@@ -42,7 +42,7 @@ const Footer = () => {
 					</div>
 				</div>
 				<div className="mt-8 text-center">
-					<p className="text-slate-400">&copy; 2024 Nepal Football School. All rights reserved.</p>
+					<p className="text-xs text-slate-300">&copy; 2024 Nepal Football School. All rights reserved.</p>
 				</div>
 			</div>
 		</footer>

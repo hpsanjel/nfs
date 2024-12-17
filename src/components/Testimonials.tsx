@@ -1,4 +1,5 @@
 import KeenSlider, { KeenSliderInstance } from "keen-slider";
+
 import { useEffect, useRef } from "react";
 import "keen-slider/keen-slider.min.css";
 
@@ -26,7 +27,6 @@ const Testimonials = () => {
 				},
 			});
 
-			// Cleanup slider instance on unmount
 			return () => sliderInstance.current?.destroy();
 		}
 	}, []);
@@ -47,12 +47,12 @@ const Testimonials = () => {
 						<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Don't just take our word for it...</h2>
 						<p className="mt-4 text-gray-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas veritatis illo placeat harum porro optio fugit a culpa sunt id!</p>
 						<div className="hidden lg:mt-8 lg:flex lg:gap-4">
-							<button aria-label="Previous slide" onClick={handlePrevClick} className="rounded-full border border-rose-600 p-3 text-rose-600 transition hover:bg-rose-600 hover:text-white">
+							<button aria-label="Previous slide" onClick={handlePrevClick} className="rounded-full border border-rose-600 p-3 transition bg-rose-600 text-white">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-5 rtl:rotate-180">
 									<path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
 								</svg>
 							</button>
-							<button aria-label="Next slide" onClick={handleNextClick} className="rounded-full border border-rose-600 p-3 text-rose-600 transition hover:bg-rose-600 hover:text-white">
+							<button aria-label="Next slide" onClick={handleNextClick} className="rounded-full border border-rose-600 p-3 transition bg-rose-600 text-white">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-5 rtl:rotate-180">
 									<path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
 								</svg>
@@ -63,14 +63,28 @@ const Testimonials = () => {
 						<div ref={sliderRef} className="keen-slider">
 							<div className="keen-slider__slide">
 								<blockquote className="bg-white p-6 shadow-sm sm:p-8 lg:p-12">
-									<p className="text-lg font-medium text-gray-900">Great experience with their service!</p>
-									<footer className="mt-4 text-sm text-gray-600">- John Doe</footer>
+									<div className="flex items-center gap-2">
+										<div>
+											<img src="/nfs.png" alt="NFS" width={60} height={60} />
+										</div>
+										<div>
+											<p className="text-lg font-medium text-gray-900">Great experience with their service!</p>
+											<footer className="mt-2 text-sm text-gray-600">- Jane Smith</footer>
+										</div>
+									</div>
 								</blockquote>
 							</div>
 							<div className="keen-slider__slide">
 								<blockquote className="bg-white p-6 shadow-sm sm:p-8 lg:p-12">
-									<p className="text-lg font-medium text-gray-900">Highly recommend this company!</p>
-									<footer className="mt-4 text-sm text-gray-600">- Jane Smith</footer>
+									<div className="flex items-center gap-2">
+										<div>
+											<img src="/nfs.png" alt="NFS" width={60} height={60} />
+										</div>
+										<div>
+											<p className="text-lg font-medium text-gray-900">Highly recommend this company!</p>
+											<footer className="mt-2 text-sm text-gray-600">- Jane Smith</footer>
+										</div>
+									</div>
 								</blockquote>
 							</div>
 						</div>

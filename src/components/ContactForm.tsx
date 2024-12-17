@@ -47,6 +47,11 @@ const ContactForm = () => {
 							</form>
 						</div>
 					</div>
+					<div className="flex flex-col justify-center items-left space-y-2 text-white">
+						<h1 className="font-bold">Let us get connected</h1>
+						<h2 className="text-xl text-slate-200">We love to hear from you</h2>
+						<p className="text-slate-300">Once we recieve your message, we would love to call you back and ....</p>
+					</div>
 				</div>
 			</div>
 		</section>
