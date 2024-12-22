@@ -62,7 +62,7 @@ const Testimonials = () => {
 					<div className="-mx-6 lg:col-span-2 lg:mx-0">
 						<div ref={sliderRef} className="keen-slider">
 							<div className="keen-slider__slide">
-								<blockquote className="bg-white p-6 shadow-sm sm:p-8 lg:p-12">
+								<blockquote className="bg-red-100 p-6 shadow-sm sm:p-8 lg:p-12">
 									<div className="flex items-center gap-2">
 										<div>
 											<img src="/nfs.png" alt="NFS" width={60} height={60} />
@@ -75,7 +75,7 @@ const Testimonials = () => {
 								</blockquote>
 							</div>
 							<div className="keen-slider__slide">
-								<blockquote className="bg-white p-6 shadow-sm sm:p-8 lg:p-12">
+								<blockquote className="bg-red-100 p-6 shadow-sm sm:p-8 lg:p-12">
 									<div className="flex items-center gap-2">
 										<div>
 											<img src="/nfs.png" alt="NFS" width={60} height={60} />

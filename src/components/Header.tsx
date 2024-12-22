@@ -15,10 +15,10 @@ const Header = () => {
 					<Link to="/">
 						<div className="flex items-center">
 							<img src="/nfs.png" alt="Nepal Football School" className="h-24 w-auto" />
-							<span className="ml-2 text-xl font-bold text-gray-800">Nepal Football School</span>
+							<span className="hidden md:block ml-2 text-xl font-bold text-gray-800">Nepal Football School</span>
 						</div>
 					</Link>
-					<nav>
+					<nav className="hidden">
 						<ul className="flex space-x-4">
 							<li>
 								<a href="#" className="text-gray-600 hover:text-gray-800">

@@ -1,7 +1,7 @@
 const ContactForm = () => {
 	return (
 		<section className="relative bg-cover bg-center" style={{ backgroundImage: 'url("/training.jpeg")' }}>
-			<div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay for darker background */}
+			<div className="absolute inset-0 bg-green-900 opacity-80"></div> {/* Overlay for darker background */}
 			<div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 relative z-10">
 				<div className="grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-2 ">
 					{/* This empty div now serves as an image background */}
@@ -48,8 +48,8 @@ const ContactForm = () => {
 						</div>
 					</div>
 					<div className="flex flex-col justify-center items-left space-y-2 text-white">
-						<h1 className="font-bold">Let us get connected</h1>
-						<h2 className="text-xl text-slate-200">We love to hear from you</h2>
+						<h1 className="text-3xl font-bold">Let us get connected</h1>
+						<h2 className="text-xl text-slate-200">We would love to hear from you</h2>
 						<p className="text-slate-300">Once we recieve your message, we would love to call you back and ....</p>
 					</div>
 				</div>
