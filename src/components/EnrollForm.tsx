@@ -8,7 +8,6 @@ export default function EnrollForm() {
 		yearofbirth: "",
 		email: "",
 		phone: "",
-		sport: "", // "futsal" or "football"
 	});
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,8 +21,8 @@ export default function EnrollForm() {
 	};
 
 	return (
-		<section className="max-w-3xl mx-auto px-4 py-10">
-			<h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Enroll for Futsal or Football Training</h2>
+		<section className="max-w-lg mx-auto px-4 py-10">
+			<h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Enroll for Football Training</h2>
 			<form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg">
 				<div className="grid grid-cols-1 gap-6 mb-6">
 					{/* Name Field */}
@@ -56,27 +55,6 @@ export default function EnrollForm() {
 							Phone Number
 						</label>
 						<input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your phone number" />
-					</div>
-
-					{/* Sport Selection */}
-					<div>
-						<label htmlFor="sport" className="block text-sm font-medium text-gray-700">
-							Select Training Type
-						</label>
-						<div className="mt-1 flex space-x-4">
-							<div className="flex items-center">
-								<input type="radio" id="futsal" name="sport" value="futsal" onChange={handleChange} required className="h-4 w-4 text-blue-500 focus:ring-blue-500" />
-								<label htmlFor="futsal" className="ml-2 text-sm text-gray-700">
-									Futsal
-								</label>
-							</div>
-							<div className="flex items-center">
-								<input type="radio" id="football" name="sport" value="football" onChange={handleChange} required className="h-4 w-4 text-blue-500 focus:ring-blue-500" />
-								<label htmlFor="football" className="ml-2 text-sm text-gray-700">
-									Football
-								</label>
-							</div>
-						</div>
 					</div>
 				</div>
 

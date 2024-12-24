@@ -1,58 +1,75 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Send, Phone, Mail, MapPin } from "lucide-react";
+
 const ContactForm = () => {
+	const [formState, setFormState] = useState({
+		name: "",
+		email: "",
+		phone: "",
+		message: "",
+	});
+
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { name, value } = e.target;
+		setFormState((prev) => ({ ...prev, [name]: value }));
+	};
+
+	const handleSubmit = (e: React.FormEvent) => {
+		e.preventDefault();
+		// Handle form submission logic here
+		console.log("Form submitted:", formState);
+	};
+
 	return (
-		<section className="relative bg-cover bg-center" style={{ backgroundImage: 'url("/training.jpeg")' }}>
-			<div className="absolute inset-0 bg-green-900 opacity-80"></div> {/* Overlay for darker background */}
-			<div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 relative z-10">
-				<div className="grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-2 ">
-					{/* This empty div now serves as an image background */}
-					<div className="flex items-center justify-center">
-						{/* Form */}
-						<div className="rounded-lg bg-white p-8 shadow-lg lg:p-12 max-w-lg w-full">
-							<form action="#" className="space-y-4 text-white">
-								<div>
-									<label className="sr-only" htmlFor="name">
-										Name
-									</label>
-									<input className="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Name" type="text" id="name" />
-								</div>
+		<section className="relative bg-red-900 overflow-hidden">
+			<div className="absolute inset-0 bg-[url('/circuit-board.svg')] opacity-10"></div>
 
-								<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-									<div>
-										<label className="sr-only" htmlFor="email">
-											Email
-										</label>
-										<input className="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Email address" type="email" id="email" />
-									</div>
+			<div className="relative z-10 max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
+				<motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:w-1/2 mb-12 lg:mb-0">
+					<h1 className="text-5xl font-extrabold text-white mb-6">Let's Connect</h1>
+					<p className="text-xl text-purple-200 mb-8">We're excited to hear from you and explore how we can collaborate.</p>
 
-									<div>
-										<label className="sr-only" htmlFor="phone">
-											Phone
-										</label>
-										<input className="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Phone Number" type="tel" id="phone" />
-									</div>
-								</div>
-
-								<div>
-									<label className="sr-only" htmlFor="message">
-										Message
-									</label>
-									<textarea className="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Message" rows={8} id="message"></textarea>
-								</div>
-
-								<div className="mt-4">
-									<button type="submit" className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">
-										Send Enquiry
-									</button>
-								</div>
-							</form>
-						</div>
+					<div className="space-y-4">
+						{[
+							{ icon: Phone, text: "9861251778/9742405657" },
+							{ icon: Mail, text: "contact@nepalfootballschool.com" },
+							{ icon: MapPin, text: "Velocity Futsal, Ratopool, Kathmandu" },
+						].map((item, index) => (
+							<motion.div key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} className="flex items-center text-white">
+								<item.icon className="w-6 h-6 mr-3 text-purple-300" />
+								<span>{item.text}</span>
+							</motion.div>
+						))}
 					</div>
-					<div className="flex flex-col justify-center items-left space-y-2 text-white">
-						<h1 className="text-3xl font-bold">Let us get connected</h1>
-						<h2 className="text-xl text-slate-200">We would love to hear from you</h2>
-						<p className="text-slate-300">Once we recieve your message, we would love to call you back and ....</p>
-					</div>
-				</div>
+				</motion.div>
+
+				<motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="lg:w-1/2 max-w-md w-full">
+					<form onSubmit={handleSubmit} className="space-y-6">
+						{[
+							{ name: "name", type: "text", placeholder: "Your Name" },
+							{ name: "email", type: "email", placeholder: "Your Email" },
+							{ name: "phone", type: "tel", placeholder: "Your Phone" },
+						].map((field) => (
+							<motion.div key={field.name} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} className="relative">
+								<input type={field.type} name={field.name} value={formState[field.name as keyof typeof formState]} onChange={handleInputChange} placeholder={field.placeholder} className="w-full bg-white bg-opacity-10 rounded-lg border border-red-300 focus:border-white px-4 py-3 text-white placeholder-purple-300 outline-none transition-colors duration-300" />
+							</motion.div>
+						))}
+
+						<motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
+							<textarea name="message" value={formState.message} onChange={handleInputChange} placeholder="Your Message" rows={4} className="w-full bg-white bg-opacity-10 rounded-lg border border-red-300 focus:border-white px-4 py-3 text-white placeholder-purple-300 outline-none transition-colors duration-300"></textarea>
+						</motion.div>
+
+						<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
+							<button type="submit" className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+								<span>Send Message</span>
+								<Send className="w-5 h-5 ml-2" />
+							</button>
+						</motion.div>
+					</form>
+				</motion.div>
 			</div>
 		</section>
 	);

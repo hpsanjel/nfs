@@ -49,7 +49,7 @@ const Header = () => {
 			</header>
 			{/* Smooth transition effect */}
 			<div className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${isEnrollFormVisible ? "max-h-screen" : "max-h-0"}`}>
-				<div className="bg-gray-100 py-6 px-4 shadow-md">
+				<div className="bg-red-100">
 					<EnrollForm />
 				</div>
 			</div>{" "}

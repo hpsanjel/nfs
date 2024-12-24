@@ -1,6 +1,6 @@
 const Footer = () => {
 	return (
-		<footer className=" bg-gradient-to-t from-red-900 to-red-400 text-white py-8">
+		<footer className=" bg-gradient-to-b from-black to-slate-700 text-white py-8">
 			<div className="container mx-auto px-4">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:mx-6">
 					<div className="space-y-2 max-w-sm">
@@ -36,9 +36,9 @@ const Footer = () => {
 					</div>
 					<div>
 						<h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-						<p>123 Football Street, Kathmandu, Nepal</p>
+						<p>Velocity Futsal, Ratopool, Kathmandu, Nepal</p>
 						<p>Email: info@nepalfootballschool.com</p>
-						<p>Phone: +977 1 234 5678</p>
+						<p>Phone: 9861251778/9742405657</p>
 					</div>
 				</div>
 				<div className="mt-8 text-center">
